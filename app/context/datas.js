@@ -7,12 +7,12 @@ export const useDataContext = () => useContext(DataContext);
 const fetcher = () => fetch(`https://comfort-zone-server.vercel.app/productCategories`).then(res => res.json())
 const DataProvider = ({children}) => {
     const [category,setCategory]=useState()
-    const { data,isLoading } = useSWR('api/allItems', fetcher)
+    const { data } = useSWR('api/allItems', fetcher)
     const info={
         data,
         setCategory,
         category,
-        isLoading
+        
     }
     return (
         <DataContext.Provider value={info}>

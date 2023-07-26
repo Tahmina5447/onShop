@@ -14,15 +14,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-  const { data, setCategory,isLoading } = useDataContext()
+  const { data, setCategory } = useDataContext()
   const router = useRouter()
   const getName = (name) => {
 
     setCategory(name)
   }
-if(isLoading){
-  return <div><h1 className='font-bold text-center text-xl'>Loading........</h1></div>
-}
+
   return (
     <>
       <div>
