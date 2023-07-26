@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useDataContext } from '../context/datas';
 export default function Page() {
   const { category } = useDataContext()
-  const [loading,setLoading]=useState(true)
   const [data, setData] = useState(null)
   
 
@@ -21,9 +20,6 @@ export default function Page() {
       })
   }, [category])
 
-  if(loading){
-    return <div><h1 className='font-bold text-center text-xl'>Loading........</h1></div>
-  }
 
   return (
     <>
