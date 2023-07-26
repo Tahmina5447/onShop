@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useDataContext } from '../context/datas';
 export default function Page() {
   const { category } = useDataContext()
-  const [data, setData] = useState(null)
+  const [data, setData] = useState([])
   
 
 
@@ -15,7 +15,6 @@ export default function Page() {
       .then((res) => res.json())
       .then((data) => {
         setData(data)
-        setLoading(false)
         
       })
   }, [category])
